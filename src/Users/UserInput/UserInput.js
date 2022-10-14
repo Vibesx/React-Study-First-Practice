@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
-import Card from "../UI/Card";
-import Button from "../UI/Button";
-import ErrorModal from "../UI/ErrorModal";
+import Card from "../../UI/Card";
+import Button from "../../UI/Button";
+import ErrorModal from "../../UI/ErrorModal";
 
 import styles from "./UserInput.module.css";
+import Wrapper from "../../Helpers/Wrapper";
 
 const UserInput = (props) => {
+	const nameInputRef = userRef();
+	const ageInputRef = userRef();
+
 	const [userName, setUserName] = useState("");
 	const [userAge, setUserAge] = useState("");
 	const [errorContent, setErrorContent] = useState();
@@ -51,7 +55,7 @@ const UserInput = (props) => {
 	};
 
 	return (
-		<div>
+		<Wrapper>
 			{errorContent && (
 				<ErrorModal
 					title={errorContent.title}
@@ -78,7 +82,7 @@ const UserInput = (props) => {
 					<Button type="submit" text="Add User"></Button>
 				</form>
 			</Card>
-		</div>
+		</Wrapper>
 	);
 };
 

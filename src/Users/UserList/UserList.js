@@ -1,6 +1,6 @@
 import UserItem from "../UserItem/UserItem";
 
-import Card from "../UI/Card";
+import Card from "../../UI/Card";
 
 import styles from "./UserList.module.css";
 
